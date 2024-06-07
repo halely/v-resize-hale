@@ -1,9 +1,50 @@
-# 需求 
+# 需求
 
-实现一个函数同时支持hook和自定义指令 去监听dom宽高的变化
-`5w3h` 八何分析法
-如何监听`DOM`宽高变化
-如何用`vite`打包库
-如何发布`npm`
+同时支持hook和自定义指令 去监听dom宽高的变化
 `index.d.ts` 就是声明文件
-<!-- package.json "module" import和export就回去找v-resize-xm.njs的export "main" require 就会去找main下面的目录 -->
+
+# 安装
+
+```cmd
+npm i v-resize-hale
+pnpm i v-resize-hale
+```
+
+# 使用
+
+## Hook
+
+```vue
+<template>
+    <div id="resize">
+        我是testBox
+    </div>
+</template>
+<script setup lang="ts">
+import { onMounted } from "vue";
+import useResize from "v-resize-hale";
+onMounted(() => {
+    vResizeRf(document.getElementById("resize") as HTMLElement, (e: any) => {
+        console.log(e)
+    })
+})
+</script>
+<style lang="scss" scoped>
+#resize {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #eee;
+    resize: both;
+    overflow: hidden
+}
+</style>
+
+```
+
+## 指令
+
+```ts
+import useResize from "v-resize-hale";
+const app = createApp(App);
+app.use(useResize)
+```
