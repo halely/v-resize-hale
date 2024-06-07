@@ -1,0 +1,21 @@
+{
+  "name": "v-resize-hale",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/v-resize-hale.umd.js",
+  "module": "dist/v-resize-hale.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "dist","index.d.ts"
+  ],
+  "devDependencies": {
+    "vite": "^5.2.12",
+    "vue": "^3.4.27"
+  }
+}
